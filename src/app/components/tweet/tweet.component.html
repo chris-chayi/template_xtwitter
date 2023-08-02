@@ -15,7 +15,7 @@
     <ion-row>
       <ion-col size="12">
         <div [innerHtml]="tweet.text"></div>
-        <img class="preview-img" [src]="tweet.attachment" *ngIf="tweet.attachment">
+        <img class="preview-img" [src]="tweet?.attachment" *ngIf="tweet.attachment">
       </ion-col>
     </ion-row>
 
@@ -44,7 +44,7 @@
         </ion-button>
       </ion-col>
     </ion-row>
-    
+
 
   </ion-col>
 
