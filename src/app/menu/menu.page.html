@@ -1,0 +1,54 @@
+<ion-menu side="start" contentId="main">
+  <ion-content>
+    <ion-grid>
+      <ion-row class="ion-padding">
+        <ion-col size="12" class="ion-text-left">
+          <ion-avatar>
+            <ion-img src="./assets/img/profile.jpg"></ion-img>
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="12">
+          <b>Simon Grimm</b><br>
+          <span>@schlimmson</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-list lines="none">
+      <ion-item class="ion-margin-bottom">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        Profile
+      </ion-item>
+      <ion-item class="ion-margin-bottom">
+        <ion-icon name="reader-outline" slot="start"></ion-icon>
+        Lists
+      </ion-item>
+      <ion-item class="ion-margin-bottom">
+        <ion-icon name="chatbubble-ellipses-outline" slot="start"></ion-icon>
+        Topics
+      </ion-item>
+      <ion-item class="ion-margin-bottom">
+        <ion-icon name="bookmark-outline" slot="start"></ion-icon>
+        Bookmarks
+      </ion-item>
+      <ion-item class="ion-margin-bottom">
+        <ion-icon name="flash-outline" slot="start"></ion-icon>
+        Moments
+      </ion-item>
+
+      <ion-menu-toggle>
+        <ion-item class="ion-margin-top" routerLink="/tabs/tab1/settings" routerDirection="forward">
+          Settings and privacy
+        </ion-item>
+      </ion-menu-toggle>
+
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      TEST
+    </ion-toolbar>
+  </ion-footer>
+</ion-menu>
+
+<ion-router-outlet id="main"></ion-router-outlet>

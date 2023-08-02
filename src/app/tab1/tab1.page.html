@@ -1,0 +1,50 @@
+<ion-header #header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+      <ion-icon name="logo-twitter" color="primary" size="large"></ion-icon>
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="pulse-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-segment [(ngModel)]="segment" mode="md" #segmentcontrol>
+  <ion-segment-button value="home">
+    <ion-label>Home</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="content">
+    <ion-label>cr-content-suggest</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+<ion-content fullscreen="true" scrollEvents="true" [appHideHeader]="header"
+[appStickySegment]="segmentcontrol">
+
+  <ion-slides [options]="opts">
+    <ion-slide *ngFor="let tweet of tweets">
+      <ion-avatar>
+        <img [src]="tweet.img">
+      </ion-avatar>
+    </ion-slide>
+  </ion-slides>
+
+  <div *ngIf="segment == 'home'">
+    <app-tweet *ngFor="let tweet of tweets" [tweet]="tweet"></app-tweet>
+  </div>
+
+  <div *ngIf="segment == 'content'">
+    Other content
+  </div>
+</ion-content>
